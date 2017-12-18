@@ -17,7 +17,10 @@ void main() {
                 : "...._", "5" : ".....", "6" : "_....", "7" : "__...", "8"
                 : "___..", "9" : "____.", "0" : "____", " " : "/"
         ];
-        auto txt = "args";
+        /**
+        Put your text in the "txt" variable.
+        */
+        auto txt = "Hello World";
         auto next = toUpper(txt).map!text.array;
         foreach (i, e; next) {
                 write(morseCode[e], " ");
