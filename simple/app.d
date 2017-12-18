@@ -6,7 +6,7 @@ import std.getopt : getopt;
 import std.stdio : write;
 import std.string : toUpper;
 
-void main(string[] args) {
+void main() {
         immutable string[string] morseCode = [
                 "A" : "._", "B" : "_...", "C" : "_._.", "D" : "_..", "E" : ".", "F"
                 : ".._.", "G" : "__.", "H" : "....", "I" : "..", "J" : ".___", "K"
