@@ -3,7 +3,7 @@ import std.algorithm : map;
 import std.array : array;
 import std.conv : text;
 import std.getopt : getopt;
-import std.stdio : readln, write;
+import std.stdio : write;
 import std.string : toUpper;
 
 void main(string[] args) {
@@ -17,8 +17,7 @@ void main(string[] args) {
                 : "...._", "5" : ".....", "6" : "_....", "7" : "__...", "8"
                 : "___..", "9" : "____.", "0" : "____", " " : "/"
         ];
-        string txt;
-        getopt(args, "txt", &txt);
+        auto txt = "args";
         auto next = toUpper(txt).map!text.array;
         foreach (i, e; next) {
                 write(morseCode[e], " ");
