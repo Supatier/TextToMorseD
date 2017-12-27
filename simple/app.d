@@ -20,9 +20,9 @@ void main() {
         /**
         Put your text in the "txt" variable.
         */
-        auto txt = "Hello World";
-        auto next = toUpper(txt).map!text.array;
-        foreach (i, e; next) {
+        string txt = "Hello World";
+        string[] txtArr = toUpper(txt).map!text.array;
+        foreach (i, e; txtArr) {
                 write(morseCode[e], " ");
         }
 }
