@@ -3,10 +3,10 @@ Usage : dmd app.d
         ./app "any text"
 */
 import std.algorithm : map;
-import std.array : array;
+import std.array : array, join;
 import std.conv : text;
 import std.getopt : getopt;
-import std.stdio : write, writeln;
+import std.stdio : writeln;
 import std.string : toUpper;
 
 void main(string[] args) {
@@ -20,10 +20,13 @@ void main(string[] args) {
                 : "...._", "5" : ".....", "6" : "_....", "7" : "__...", "8"
                 : "___..", "9" : "____.", "0" : "____", " " : "/"
         ];
-        writeln("You typed \"", args[1], "\"");
-        auto txt = args[1];
-        auto next = toUpper(txt).map!text.array;
+        string txt = join(args[1..$], " ");
+        writeln("You typed \"", txt, "\"");
+        string[] next = toUpper(txt).map!text.array;
+        string ret;
         foreach (i, e; next) {
-                write(morseCode[e], " ");
+                ret ~= morseCode[e];
+                ret ~= " ";
         }
+        writeln(ret);
 }
